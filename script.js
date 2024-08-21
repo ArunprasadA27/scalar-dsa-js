@@ -3,3 +3,4 @@
 
 CountFactors();
 CountNoOfPrimes(19);
+CheckIsPrime();
