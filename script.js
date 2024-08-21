@@ -1,6 +1,12 @@
 // 1. Day 4 - Intermediate DSA 
 // ----------------------------
 
+// Mandatory Questions
+// --------------------
 CountFactors();
-CountNoOfPrimes(19);
 CheckIsPrime();
+
+// Additional Questions
+// --------------------
+PerfectNumber();
+CountNoOfPrimes();

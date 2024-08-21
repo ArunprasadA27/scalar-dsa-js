@@ -1,4 +1,6 @@
-function CountNoOfPrimes(x) {
+function CountNoOfPrimes() {
+    let x = 1;
+
     let primeCount = 0;
 
     for (let i = 2; i <= x; i++) {
