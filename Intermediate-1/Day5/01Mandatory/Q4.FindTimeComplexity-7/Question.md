@@ -1,4 +1,4 @@
-## Q4. Find Time Complexity - 7 - Objective
+## Q5. Find Time Complexity - 7 - Objective
 
 ### What is the time complexity of the following code :
 
@@ -12,8 +12,5 @@ for (int i = 0; i < n; i++) {
 ```
 
 ### Answer
-O(nlogn)
+O(n^2)
 
-
-### Explanation
-![alt text](chrome_YHDI3w9hfP.png)
