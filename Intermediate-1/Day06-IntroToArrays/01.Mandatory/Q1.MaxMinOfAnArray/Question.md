@@ -40,7 +40,15 @@ Maximum Element is 5 and Minimum element is -4. (5 + (-4)) = 1.
 #### Explanation 2:
 Factors of 10 are 1, 2, 5 and 10.
 
-## Answer
+### Solution Aproach
+We can loop through the array and find the maximum and minimum
+element of the array. 
+Finally, we return the sum of the above two elements
+
+Time Complexity : O(N)
+
+Space Complexity : O(1)
+### Answer
 
 ```
 function MaxMinArray() {
