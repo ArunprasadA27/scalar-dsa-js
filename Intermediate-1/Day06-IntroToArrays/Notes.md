@@ -1,0 +1,294 @@
+
+## Q1. Max Min of an Array
+### Problem Description
+-----------------------
+Given an array A of size N. You need to find the sum of Maximum and Minimum element in the given array.
+
+
+### Problem Constraints
+-----------------------
+1 <= N <= 10^5 \
+-10^9 <= A[i] <= 10^9
+
+### Input Format
+-----------------------
+First argument A is an integer array.
+
+### Output Format
+-----------------------
+Return the sum of maximum and minimum element of the array
+
+### Example Input
+-----------------------
+#### Input 1:
+A = [-2, 1, -4, 5, 3]
+
+#### Input 2:
+A = [1, 3, 4, 1]
+
+### Example Output
+-----------------------
+#### Output 1: 
+1
+#### Output 2:
+5
+
+### Example Explanation
+-----------------------
+#### Explanation 1:
+Maximum Element is 5 and Minimum element is -4. (5 + (-4)) = 1. 
+
+#### Explanation 2:
+Factors of 10 are 1, 2, 5 and 10.
+
+### Solution Aproach
+We can loop through the array and find the maximum and minimum
+element of the array. 
+Finally, we return the sum of the above two elements
+
+Time Complexity : O(N)
+
+Space Complexity : O(1)
+### Answer
+
+```
+function MaxMinArray() {
+    // let A = [1, 3, 4, 1];
+
+    let A = [-2, 1, -4, 5, 3]
+
+    let result = getMaxMinArray(A);
+    console.log(`Sum of max & min is : ${result}`);
+}
+
+function getMaxMinArray(A) {
+    let max = Number.NEGATIVE_INFINITY;
+    let min = Number.POSITIVE_INFINITY;
+
+    for (let i = 0; i < A.length; i++) {
+        if (A[i] > max) {
+            max = A[i];
+        }
+        if (A[i] < min) {
+            min = A[i];
+        }
+    }
+    return max + min;
+}
+```
+## Q3. Reverse in a range
+### Problem Description
+-----------------------
+Given an array A of N integers and also given two integers B and C. Reverse the elements of the array A within the given inclusive range [B, C].
+
+
+### Problem Constraints
+-----------------------
+1 <= N <= 10^5 \
+1 <= A[i] <= 10^9 \
+0 <= B <= C <= N - 1
+
+### Input Format
+-----------------------
+The first argument A is an array of integer. \
+The second and third arguments are integers B and C
+
+### Output Format
+-----------------------
+Return the array A after reversing in the given range.
+
+### Example Input
+-----------------------
+#### Input 1:
+```
+A = [1, 2, 3, 4]
+B = 2
+C = 3
+```
+
+#### Input 2:
+```
+A = [2, 5, 6]
+B = 0
+C = 2
+```
+
+### Example Output
+-----------------------
+#### Output 1: 
+```
+[1, 2, 4, 3]
+```
+#### Output 2:
+```
+[6, 5, 2]
+```
+
+### Example Explanation
+-----------------------
+#### Explanation 1:
+We reverse the subarray [3, 4]. 
+
+#### Explanation 2:
+We reverse the entire array [2, 5, 6].
+
+### Hint 1
+We need to reverse the subarray [A[B], A[B+1], A[B+2] .... , A[C]].
+After reversing, the subarray should look like this - 
+[A[C], .... A[B+2], A[B+1], A[B]]
+Try to solve this in  linear time complexity.
+
+### Hint 2
+We can initialise two variable i and j with B and C.
+We will iterate till i < j, swapping A[i] and A[j]
+in every step and then incrementing i and decrementing j.
+
+Time Complexity : O(N)
+Space Complexity : O(1)
+
+### Answer
+
+```
+function ReverseArrayInRange() {
+    // Input 1
+    // let A = [1, 2, 3, 4]
+    // let B = 2
+    // let C = 3
+
+    //Input 2
+    let A = [2, 5, 6]
+    let B = 0
+    let C = 2
+
+    let result = getReverseArrayInRange(A, B, C);
+    console.log(`Reversed array in the given idex : ${A}`);
+}
+
+function getReverseArrayInRange(A, B, C) {
+    let left = B, right = C;
+    while (left < right) {
+        let temp = A[left];
+        A[left] = A[right];
+        A[right] = temp;
+        left++;
+        right--;
+    }
+}
+```
+
+## Q4. Array Rotation
+
+### Problem Description
+-----------------------
+Given an integer array A of size N and an integer B, you have to return the same array after rotating it B times towards the right.
+
+### Problem Constraints
+-----------------------
+1 <= N <= 10^5 \
+1 <= A[i] <=10^9 \
+1 <= B <= 10^9
+
+### Input Format
+-----------------------
+The first argument given is the integer array A.\
+The second argument given is the integer B.
+
+### Output Format
+-----------------------
+Return the array A after rotating it B times to the right
+
+### Example Input
+-----------------------
+#### Input 1:
+```
+A = [1, 2, 3, 4]
+B = 2
+```
+
+#### Input 2:
+```
+A = [2, 5, 6]
+B = 1
+```
+
+### Example Output
+-----------------------
+#### Output 1: 
+```
+[3, 4, 1, 2]
+```
+#### Output 2:
+```
+[6, 2, 5]
+```
+
+### Example Explanation
+-----------------------
+#### Explanation 1:
+Rotate towards the right 2 times - [1, 2, 3, 4] => [4, 1, 2, 3] => [3, 4, 1, 2]
+
+#### Explanation 2:
+Rotate towards the right 1 time - [2, 5, 6] => [6, 2, 5]
+
+### Hint 1
+Let's say the given array is - [1, 2, 3, 4, 5, 6, 7] and we have to rotate it by 3. 
+So, after rotation, it should look like this - [5, 6, 7, 1, 2, 3, 4].
+Try to observe what is happening over here? 
+Last 3 elements are being shifted in the front and remaining first elements are shifted towards the last. 
+Is it something similar to reversing an array? 
+
+[1, 2, 3, 4, 5, 6, 7] After reversing it => [7, 6, 5, 4, 3, 2, 1]
+Now, think on the order of first 3 elements and order of remaining elements. 
+
+### Solution Approach
+Let n be the length of the array.
+Rotating an array by n and 2 * n times gives the same results, i.e., rotating i or i % n times is the same.
+So, we update B to B % n.
+
+When we rotate the array B times, B elements from the back end of the array come to the front 
+and the rest of the elements from the front shift backward.
+
+In this approach, we firstly reverse all the elements of the array. 
+Then, reversing the first B elements followed by reversing the rest N - B elements gives us the required result.
+
+Time Complexity : O(N)
+Space Complexity : O(1)
+
+### Answer
+
+```
+function ArrayRotation() {
+    // Input 1
+    // let A = [1, 2, 3, 4]
+    // let B = 2
+
+    //Input 2
+    let A = [7, 4, 2, 10, 5]
+    let B = 5
+
+    let result = getArrayRotation(A, B);
+    console.log(`Rotated array after ${B} times : ${result}`);
+}
+
+function getArrayRotation(A, B) {
+
+    B = B % A.length;
+
+    let reverseA = getArrayReverse(A, 0, A.length - 1);
+    let rev1 = getArrayReverse(reverseA, 0, B - 1);
+    let rev2 = getArrayReverse(rev1, B, A.length - 1);
+    return rev2;
+}
+
+function getArrayReverse(A, B, C) {
+    let left = B, right = C;
+    while (left < right) {
+        let temp = A[left];
+        A[left] = A[right];
+        A[right] = temp;
+        left++;
+        right--;
+    }
+    return A;
+}
+```
