@@ -93,38 +93,37 @@ Space Complexity : O(1)
 ### Answer
 
 ```
-function ArrayRotation() {
+function GoodPair() {
     // Input 1
     // let A = [1, 2, 3, 4]
-    // let B = 2
+    // let B = 7
 
     //Input 2
-    let A = [7, 4, 2, 10, 5]
-    let B = 5
+    // let A = [1, 2, 4]
+    // let B = 4
 
-    let result = getArrayRotation(A, B);
-    console.log(`Rotated array after ${B} times : ${result}`);
-}
+    //Input 3
+    let A = [1, 2, 2]
+    let B = 4
 
-function getArrayRotation(A, B) {
-
-    B = B % A.length;
-
-    let reverseA = getArrayReverse(A, 0, A.length - 1);
-    let rev1 = getArrayReverse(reverseA, 0, B - 1);
-    let rev2 = getArrayReverse(rev1, B, A.length - 1);
-    return rev2;
-}
-
-function getArrayReverse(A, B, C) {
-    let left = B, right = C;
-    while (left < right) {
-        let temp = A[left];
-        A[left] = A[right];
-        A[right] = temp;
-        left++;
-        right--;
+    let result = getGoodPair(A, B);
+    if (result) {
+        console.log(`Array has ${B} in it!!!`);
+    } else {
+        console.log(`Array has NO ${B} in it!!!`);
     }
-    return A;
 }
+
+function getGoodPair(A, B) {
+    for (let i = 0; i < A.length; i++) {
+        for (let j = i; j < A.length; j++) {
+            if (A[i] + A[j] === B && i != j) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
 ```

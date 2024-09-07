@@ -21,4 +21,8 @@
 // MaxMinArray();
 // ReverseArrayInRange();
 // ArrayRotation();
-GoodPair();
+// GoodPair();
+
+// Additional Questions
+// --------------------
+linearSearch();
