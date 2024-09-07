@@ -20,4 +20,5 @@
 // --------------------
 // MaxMinArray();
 // ReverseArrayInRange();
-ArrayRotation();
+// ArrayRotation();
+GoodPair();

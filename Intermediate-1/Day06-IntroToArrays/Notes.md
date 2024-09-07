@@ -1,5 +1,6 @@
+<details>
+<summary>Q1. Max Min of an Array</summary>
 
-## Q1. Max Min of an Array
 ### Problem Description
 -----------------------
 Given an array A of size N. You need to find the sum of Maximum and Minimum element in the given array.
@@ -76,7 +77,11 @@ function getMaxMinArray(A) {
     return max + min;
 }
 ```
-## Q3. Reverse in a range
+</details>
+
+<details>
+<summary> Q3. Reverse in a range</summary>
+
 ### Problem Description
 -----------------------
 Given an array A of N integers and also given two integers B and C. Reverse the elements of the array A within the given inclusive range [B, C].
@@ -175,8 +180,9 @@ function getReverseArrayInRange(A, B, C) {
     }
 }
 ```
-
-## Q4. Array Rotation
+</details>
+<details>
+<summary> Q4. Array Rotation</summary>
 
 ### Problem Description
 -----------------------
@@ -292,3 +298,6 @@ function getArrayReverse(A, B, C) {
     return A;
 }
 ```
+</details>
+<details>
+<summary> Q5. Good pair</summary>
