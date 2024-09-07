@@ -25,4 +25,5 @@
 
 // Additional Questions
 // --------------------
-linearSearch();
+// linearSearch();
+secondLargest();
