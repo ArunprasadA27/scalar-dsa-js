@@ -1,8 +1,11 @@
-## Q2. Second Largest
+## Q3. Time to equality
 
 ### Problem Description
 -----------------------
-You are given an integer array A. You have to find the second largest element/value in the array or report that no such element exists.
+Given an integer array A of size N. In one second, you can increase the value of one element by 1. \
+Find the minimum time in seconds to make all elements of the array equal.
+
+
 
 ### Problem Constraints
 -----------------------

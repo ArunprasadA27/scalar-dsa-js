@@ -1,4 +1,4 @@
-function secondLargest() {
+function timeToEquality() {
     // let A = [1, 1, 1];
 
     let A = [1, 2, 3, 5, 6, 7, 8, 5, 4, 5];
@@ -11,7 +11,7 @@ function secondLargest() {
     }
 }
 
-function getSecondLargest(A) {
+function getTimeToEquality(A) {
     let max = A[0];
     for (let i = 1; i < A.length; i++) {
         if (A[i] > max) {
