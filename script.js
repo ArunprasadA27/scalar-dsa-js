@@ -26,4 +26,5 @@
 // Additional Questions
 // --------------------
 // linearSearch();
-secondLargest();
+// secondLargest();
+timeToEquality();

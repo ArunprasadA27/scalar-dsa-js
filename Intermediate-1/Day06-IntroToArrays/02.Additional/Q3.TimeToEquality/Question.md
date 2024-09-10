@@ -9,92 +9,71 @@ Find the minimum time in seconds to make all elements of the array equal.
 
 ### Problem Constraints
 -----------------------
-1 <= |A| <= 10^5 \
-0 <= A[i] <= 10^9
+1 <= N <= 1000000 \
+1 <= A[i] <= 1000
 
 ### Input Format
 -----------------------
-The first argument is an integer array A.
+First argument is an integer array A.
 
 ### Output Format
 -----------------------
-Return the second largest element. If no such element exist then return -1.
+Return an integer denoting the minimum time to make all elements equal.
 
 ### Example Input
 -----------------------
 #### Input 1:
 ```
-A = [2, 1, 2] 
-
+A = [2, 4, 1, 3, 2]
  ```
 
-#### Input 2:
-```
-A = [2]
-```
 
 ### Example Output
 -----------------------
 #### Output 1: 
 ```
-1
-```
-#### Output 2:
-```
--1
+8
 ```
 
 ### Example Explanation
 -----------------------
 #### Explanation 1:
-First largest element = 2 \
-Second largest element = 1
+We can change the array A = [4, 4, 4, 4, 4]. The time required will be 8 seconds.
 
-#### Explanation 2:
-There is no second largest element in the array.
 
 ### Hint 1
-* You can loop through the array maintaining two variables:
-    * largest: denoting the largest element in the array processed.
-    * secondLargest: denoting the second largest element in the array processed.
-* Try to find out the largest element, and then we can find the second largest using it.
+* Since we can only increase the element by 1, we should increase all elements up to the maximum element.
+
+
 
 ### Solution Approach
-* First, we iterate over each element in the list and find the largest element. Let’s say max_elem.
-* Then, we again iterate over each element in the list using a for loop and find the largest element, but we also check if that element is equal to max_elem, if it is we skip it.
+* We can find the maximum element, and for finding the minimum number of moves, we should find the summation of the absolute difference of all 
+elements with the maximum element.
 
 ### Answer
 
 ```
-function secondLargest() {
-    // let A = [1, 1, 1];
+function timeToEquality() {
+    let A = [2, 4, 1, 3, 2] // Output shoud be 8
 
-    let A = [1, 2, 3, 5, 6, 7, 8, 5, 4, 5];
-
-    let result = getSecondLargest(A);
+    let result = getTimeToEquality(A);
     if (result > 0) {
-        console.log(`Second largest value us ${result}`);
-    } else {
-        console.log(`There is no second largest value present!!!`);
+        console.log(`Time to equality ${result}`);
     }
 }
 
-function getSecondLargest(A) {
-    let max = A[0];
-    for (let i = 1; i < A.length; i++) {
+function getTimeToEquality(A) {
+    let max = Number.NEGATIVE_INFINITY;
+    for (let i = 0; i < A.length; i++) {
         if (A[i] > max) {
             max = A[i];
         }
     }
 
-    let smax = Number.NEGATIVE_INFINITY;
-
+    let count = 0;
     for (let i = 0; i < A.length; i++) {
-        if (A[i] !== max && A[i] > smax) {
-            smax = A[i];
-        }
+        count = count + (max - A[i]);
     }
-
-    return smax === Number.NEGATIVE_INFINITY ? -1 : smax;
+    return count;
 }
 ```
