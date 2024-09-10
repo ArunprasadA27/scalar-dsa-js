@@ -27,4 +27,5 @@
 // --------------------
 // linearSearch();
 // secondLargest();
-timeToEquality();
+// timeToEquality();
+countOfElements();
