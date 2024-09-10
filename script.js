@@ -28,4 +28,8 @@
 // linearSearch();
 // secondLargest();
 // timeToEquality();
-countOfElements();
+// countOfElements();
+
+// 4. Day 7 - Prefix Sum
+// ----------------------------
+rangeSumQuery();
